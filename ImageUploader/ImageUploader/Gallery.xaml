@@ -38,7 +38,7 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="-10,0,0,-499">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
@@ -64,14 +64,25 @@
             <TextBlock x:Name="title" Text="Gallery" Style="{StaticResource GalleryTitle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
-
+        
         <SearchBox HorizontalAlignment="Left" Margin="981,64,0,0" VerticalAlignment="Top" Width="350"/>
         <TextBlock HorizontalAlignment="Left" Margin="1102,37,0,0" TextWrapping="Wrap" Text="Search Gallery" VerticalAlignment="Top" Style="{StaticResource TextBlockStyle1}"/>
-        <Image HorizontalAlignment="Left" Height="225" Margin="80,139,0,0" VerticalAlignment="Top" Width="236" Source="Assets/placeholder1.jpg" Grid.RowSpan="2"/>
+        <Image x:Name="FirstImage" HorizontalAlignment="Left" Height="225" Margin="80,139,0,0" VerticalAlignment="Top" Width="236" Source="Assets/placeholder1.jpg" Grid.RowSpan="2"/>
         <Image HorizontalAlignment="Left" Height="118" Margin="327,139,0,0" VerticalAlignment="Top" Width="119" Source="Assets/placeholder1.jpg" Grid.RowSpan="2"/>
         <Image HorizontalAlignment="Left" Height="118" Margin="327,124,0,0" Grid.Row="1" VerticalAlignment="Top" Width="138" Source="Assets/placeholder1.jpg"/>
         <Image HorizontalAlignment="Left" Height="342" Margin="74,252,0,0" Grid.Row="1" VerticalAlignment="Top" Width="421" Source="Assets/placeholder1.jpg"/>
         <Image HorizontalAlignment="Left" Height="226" Margin="463,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="287" Source="Assets/placeholder1.jpg"/>
         <Image HorizontalAlignment="Left" Height="112" Margin="442,252,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Source="Assets/placeholder1.jpg"/>
+        <Image HorizontalAlignment="Left" Height="113" Margin="580,253,0,0" Grid.Row="1" VerticalAlignment="Top" Width="118" Source="Assets/placeholder1.jpg"/>
+        <Image HorizontalAlignment="Left" Height="110" Margin="443,375,0,0" Grid.Row="1" VerticalAlignment="Top" Width="116" Source="Assets/placeholder1.jpg"/>
+        <Image HorizontalAlignment="Left" Height="113" Margin="582,376,0,0" Grid.Row="1" VerticalAlignment="Top" Width="113" Source="Assets/placeholder1.jpg"/>
+        <Image HorizontalAlignment="Left" Height="110" Margin="442,494,0,0" Grid.Row="1" VerticalAlignment="Top" Width="149" Source="Assets/placeholder1.jpg"/>
+        <Image HorizontalAlignment="Left" Height="107" Margin="585,498,0,0" Grid.Row="1" VerticalAlignment="Top" Width="121" Source="Assets/placeholder1.jpg"/>
+        <Image HorizontalAlignment="Left" Height="224" Margin="721,377,0,0" Grid.Row="1" VerticalAlignment="Top" Width="228" Source="Assets/placeholder1.jpg"/>
+        <Image HorizontalAlignment="Left" Height="110" Margin="723,254,0,0" Grid.Row="1" VerticalAlignment="Top" Width="116" Source="Assets/placeholder1.jpg"/>
+        <Image HorizontalAlignment="Left" Height="126" Margin="850,254,0,0" Grid.Row="1" VerticalAlignment="Top" Width="110" Source="Assets/placeholder1.jpg"/>
+        <Image HorizontalAlignment="Left" Height="378" Margin="974,224,-165,0" VerticalAlignment="Top" Width="557" Source="Assets/placeholder1.jpg" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="107,983,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Source="Assets/placeholder1.jpg"/>
+        
     </Grid>
 </Page>

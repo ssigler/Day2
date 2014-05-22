@@ -35,6 +35,11 @@
             <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="Foreground" Value="Aquamarine"/>
         </Style>
+        <Style x:Key="TextBlockStyle4" BasedOn="{StaticResource BaseTextBlockStyle}" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="Aquamarine"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
     </Page.Resources>
     <Page.TopAppBar>
         <CommandBar>
@@ -77,7 +82,7 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <StackPanel Margin="115,139,5,31" Grid.RowSpan="2">
-            <TextBlock Text="Please enter a name for your gallery"/>
+            <TextBlock Text="Please enter a name for your gallery" Style="{StaticResource TextBlockStyle4}"/>
             <StackPanel Orientation="Horizontal" Margin="0,20,0,20">
                 <TextBox x:Name="greetingInput" Width="300" HorizontalAlignment="Left"/>
                 <Button Content="Enter" Click="Button_Click"/>
@@ -94,7 +99,7 @@
                 <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="{Binding DisplayName}" Style="{StaticResource SubheaderTextBlockStyle}"/>
                 <StackPanel x:Name="imagePanel" Grid.Row="2" Orientation="Horizontal">
                     <Border BorderBrush="{ThemeResource AppBarItemBackgroundThemeBrush}" BorderThickness="1" Width="384" Background="{ThemeResource AppBarItemBackgroundThemeBrush}" Margin="0,0,0,45">
-                        <Image x:Name="displayImage" Source="Assets/placeholder1.jpg" Margin="-3,-55,0,55" Height="353" VerticalAlignment="Bottom"/>
+                        <Image x:Name="displayImage" Source="Assets/placeholder1.jpg" Margin="-3,-40,0,-5" Height="353" VerticalAlignment="Bottom"/>
                     </Border>
                     <StackPanel Margin="20,0,0,20">
                         <TextBlock TextWrapping="Wrap" Text="File Name: " Style="{StaticResource TextBlockStyle1}"/>

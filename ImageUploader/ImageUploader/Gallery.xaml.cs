@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Storage;
+using Windows.Storage.AccessCache;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -64,8 +66,30 @@ namespace ImageUploader
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session. The state will be null the first time a page is visited.</param>
-        private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+
+            AccessListEntryView mruEntries = StorageApplicationPermissions.MostRecentlyUsedList.Entries;
+                        // Open the file via the token that you stored when adding this file into the MRU list.
+                            string mruFirstToken= Windows.Storage.AccessCache.StorageApplicationPermissions.MostRecentlyUsedList.Entries[0].Token;
+                            Windows.Storage.StorageFile file = await Windows.Storage.AccessCache.StorageApplicationPermissions.MostRecentlyUsedList.GetFileAsync(mruFirstToken);
+
+
+                            Windows.Storage.Streams.IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+
+                            // Set the image source to a bitmap.
+                            Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage =
+                                new Windows.UI.Xaml.Media.Imaging.BitmapImage();
+
+                            bitmapImage.SetSource(fileStream);
+                            FirstImage.Source = bitmapImage;
+
+                            // Set the data context for the page.
+                            this.DataContext = FirstImage;
+                        
+                    
+                
+            
         }
 
         /// <summary>
@@ -110,5 +134,9 @@ namespace ImageUploader
                 this.Frame.Navigate(typeof(MainPage));
             }
         }
+
+
+                
+        
     }
 }
