@@ -193,6 +193,11 @@ namespace ImageUploader
 
         }
 
+        private void Move_click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
       
     }
 }

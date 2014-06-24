@@ -69,10 +69,10 @@ namespace ImageUploader
         private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
 
-            AccessListEntryView mruEntries = StorageApplicationPermissions.MostRecentlyUsedList.Entries;
+            AccessListEntryView mruEntries = StorageApplicationPermissions.FutureAccessList.Entries;
                         // Open the file via the token that you stored when adding this file into the MRU list.
-                            string mruFirstToken= Windows.Storage.AccessCache.StorageApplicationPermissions.MostRecentlyUsedList.Entries[0].Token;
-                            Windows.Storage.StorageFile file = await Windows.Storage.AccessCache.StorageApplicationPermissions.MostRecentlyUsedList.GetFileAsync(mruFirstToken);
+                            string falFirstToken= Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Entries[0].Token;
+                            Windows.Storage.StorageFile file = await Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.GetFileAsync(falFirstToken);
 
 
                             Windows.Storage.Streams.IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);

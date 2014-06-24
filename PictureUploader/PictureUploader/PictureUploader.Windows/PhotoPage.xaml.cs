@@ -99,6 +99,7 @@ namespace PictureUploader
             }
 
         }
+ 
 
         /// <summary>
         /// Preserves state associated with this page in case the application is suspended or the
@@ -152,7 +153,10 @@ namespace PictureUploader
             }
 
         }
-
+        
+        
+        
+        
         private async void GetPhotoButton_Click(object sender, RoutedEventArgs e)
         {
             Windows.Storage.Pickers.FileOpenPicker openPicker = new Windows.Storage.Pickers.FileOpenPicker();

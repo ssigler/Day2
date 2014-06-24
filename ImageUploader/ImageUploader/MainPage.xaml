@@ -113,5 +113,6 @@
             </Grid>
 
         </StackPanel>
+        <Button Content="Move to Gallery" HorizontalAlignment="Left" Margin="539,536,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Move_click"/>
     </Grid>
 </Page>
